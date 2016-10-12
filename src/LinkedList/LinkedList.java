@@ -1,0 +1,27 @@
+package LinkedList;
+
+public class LinkedList {
+	
+	
+	
+	public static void main(String[] args)
+	{
+	Node p=new Node(5);
+	Node q=new Node(10,p);
+	Node r=new Node(7,q);
+	Node head=new Node(15,r);
+	// 15->7->10->5
+	LinkedListUtilities.printList(head);
+	//
+	Node tail=new Node(12);
+	head=LinkedListUtilities.insertNodeAtTail(head, tail);
+	// 15->7->10->5->12
+	LinkedListUtilities.printList(head);
+	Node newhead=new Node(81);
+	head=LinkedListUtilities.insertNodeAtHead(head, newhead);
+	// 81->15->7->10->5->12
+	LinkedListUtilities.printList(head);
+	
+	}
+	
+}
