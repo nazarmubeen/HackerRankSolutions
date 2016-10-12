@@ -81,4 +81,27 @@ public class LinkedListUtilities {
 		return head;
 	}
 	
+	//delete a Node in LinkedList
+	public static Node deleteNode(Node head,int data)
+	{
+		
+		
+		if(head==null)
+		{
+			return head;
+		}
+
+		Node temp=head;
+		while(temp.next!=null)
+		{
+			if(temp.next.data==data)
+			{
+				Node tempnext=temp.next;
+				temp.next=tempnext.next;
+				tempnext=null;
+			}
+			temp=temp.next;
+		}
+	return head;	
+	}
 }

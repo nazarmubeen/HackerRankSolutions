@@ -24,7 +24,9 @@ public class LinkedList {
 	head=LinkedListUtilities.insertNodeAtPosition(head,27, 2);
 	// 81->15->7->27->10->5->12
 	LinkedListUtilities.printList(head);
-	
+	head=LinkedListUtilities.deleteNode(head, 7);
+	// 81->15->27->10->5->12
+	LinkedListUtilities.printList(head);
 	}
 	
 }
