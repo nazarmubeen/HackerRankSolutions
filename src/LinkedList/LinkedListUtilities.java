@@ -2,6 +2,9 @@ package LinkedList;
 
 public class LinkedListUtilities {
 
+	/*
+	 * This function is to print Linked List
+	 */
 	public static void printList(Node n)
 	{
 		
@@ -39,7 +42,9 @@ public class LinkedListUtilities {
 		temp.next=node;
 		return head;
 	}
-	
+	/*
+	 * This function is to insert Node at Head
+	 */
 	public static Node insertNodeAtHead(Node head,Node node)
 	{
 		if(head==null)
@@ -54,5 +59,26 @@ public class LinkedListUtilities {
 		
 	}
 	
+	//insert a Node at specific position
+	public static Node insertNodeAtPosition(Node head,int data, int position)
+	{
+		if(head==null)
+		{
+			return head;
+		}
+		Node node=new Node(data);
+		
+		Node temp=head;
+		while(position!=0)
+		{
+			temp=temp.next;
+			position--;
+		}
+		
+		node.next=temp.next;
+		temp.next=node;
+		
+		return head;
+	}
 	
 }

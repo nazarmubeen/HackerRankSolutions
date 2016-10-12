@@ -21,6 +21,9 @@ public class LinkedList {
 	head=LinkedListUtilities.insertNodeAtHead(head, newhead);
 	// 81->15->7->10->5->12
 	LinkedListUtilities.printList(head);
+	head=LinkedListUtilities.insertNodeAtPosition(head,27, 2);
+	// 81->15->7->27->10->5->12
+	LinkedListUtilities.printList(head);
 	
 	}
 	
