@@ -32,6 +32,8 @@ public class LinkedList {
 	// 81->15->27->10->5->12
 	LinkedListUtilities.printList(head);
 	LinkedListUtilities.printReverseList(head);
+	
+
 	}
 	
 }

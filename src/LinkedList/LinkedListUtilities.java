@@ -81,6 +81,26 @@ public class LinkedListUtilities {
 		return head;
 	}
 	
+	//insert a Node in sort
+		public static Node insertNodeInSort(Node head,Node node)
+		{
+			if(head==null)
+			{
+				return head;
+			}
+			Node temp=head;
+			
+			while(!(temp.next.data>node.data))
+			{
+				temp=temp.next;
+			}
+			
+			node.next=temp.next;
+			temp.next=node;
+			
+			return head;
+		}
+		
 	//delete a Node in LinkedList
 	public static Node deleteNode(Node head,int data)
 	{
@@ -90,8 +110,17 @@ public class LinkedListUtilities {
 		{
 			return head;
 		}
-
 		Node temp=head;
+		if(head.data==data)
+		{
+			
+			head=head.next;
+			temp=null;
+			return head;
+			
+		}
+
+		
 		while(temp.next!=null)
 		{
 			if(temp.next.data==data)
