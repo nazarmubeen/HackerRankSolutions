@@ -104,4 +104,43 @@ public class LinkedListUtilities {
 		}
 	return head;	
 	}
+	
+	//function to print linked list in reverse order
+	public static void printReverseList(Node head)
+	{
+		if(head==null)
+		{
+			return;
+		}
+		Node node=head;
+		 if (node != null) {
+			 printReverseList(node.next);
+		        System.out.print("  " + node.data);
+		    }
+	}
+	
+	//function to reverse linked list 
+	public static Node  reverseList(Node head)
+	{
+		if(head==null)
+		{
+			return null;
+		}
+		
+		Node current=head;
+		Node prev=null;
+		Node next;
+		
+		while(current!=null)
+		{
+			next=current.next;
+			current.next = prev;   
+		    prev = current;
+		    current = next;
+		}
+		
+			head=prev;
+		 return head;
+	}
+	
 }

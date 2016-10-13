@@ -27,6 +27,11 @@ public class LinkedList {
 	head=LinkedListUtilities.deleteNode(head, 7);
 	// 81->15->27->10->5->12
 	LinkedListUtilities.printList(head);
+	// 12->5>10->27->15->81
+	head=LinkedListUtilities.reverseList(head);;
+	// 81->15->27->10->5->12
+	LinkedListUtilities.printList(head);
+	LinkedListUtilities.printReverseList(head);
 	}
 	
 }
