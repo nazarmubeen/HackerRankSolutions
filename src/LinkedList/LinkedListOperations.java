@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.util.HashMap;
+
 public class LinkedListOperations {
 
 	
@@ -110,6 +112,74 @@ public class LinkedListOperations {
 
 		return false;
 	}
+	
+	
+	
+	/*
+	 * Given pointers to the head nodes of two linked lists that merge together at some 
+	 * point, find the Node where the two lists merge. It is guaranteed that the two 
+	 * head Nodes will be different, and neither will be NULL.
+	 */
+	
+	public static int FindMergeNode(Node head1, Node head2)
+	{
+		int data = 0;
+		Node temp1=head1;
+		Node temp2=head2;
+		Node temp;
+		
+		int size1=listSize(head1);
+		int size2=listSize(head2);
+		int diff;
+		
+		if(size1>size2)
+		{
+			diff=size1-size2;
+			while(diff!=0)
+			{
+				temp1=temp1.next;
+				diff--;
+			}
+			temp=temp1;
+		}
+		else{
+			diff=size2-size1;
+			while(diff!=0)
+			{
+				temp2=temp2.next;
+				diff--;
+			}
+			temp=temp1;
+		}
+		
+		while(temp!=null)
+		{
+			temp1=temp1.next;
+			temp2=temp2.next;
+			if(temp1==temp2)
+			{
+				return temp1.data;
+			}
+		}
+		
+		
+		return data;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	//function to get the size of list
 	public static int listSize(Node head)
