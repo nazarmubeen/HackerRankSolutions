@@ -46,6 +46,71 @@ public class LinkedListOperations {
 		return 1;
 	}
 	
+	
+	
+	/*You're given the pointer to the head node of a sorted linked list, where the data in the nodes is in
+	 *  ascending order. Delete as few nodes as possible so that the list does not
+	 *  contain any value more than once. 
+	 *  The given head pointer may be null indicating that the list is empty.
+	 */
+	
+	
+	//function to remove duplicates
+	public static Node RemoveDuplicates(Node head)
+	{
+		if(head==null)
+		{
+			return head;
+		}
+		
+		Node current=head;
+		Node previous=current;
+		while(current!=null)
+		{
+			if(previous.data==current.data)
+			{
+				previous.next=current.next;
+				current=null;
+				current=previous.next;
+			}
+			else{
+			previous=current;
+			current=current.next;
+			
+			}
+		}
+		
+		return head;
+	}
+	
+	//A linked list is said to contain a cycle if any node is visited more than once while traversing the list.
+	
+	//function to check cycle
+	public static boolean hasCycle(Node head) {
+		
+		if(head==null)
+		{
+			return false;
+		}
+		
+		Node slowtemp=head;
+		Node fasttemp=head;
+		
+		while(slowtemp!=null && fasttemp!=null && fasttemp.next!=null)
+		{
+			slowtemp=slowtemp.next;
+			fasttemp=fasttemp.next.next;
+			if(slowtemp==fasttemp)
+			{
+				return true;
+			}
+			
+		}
+		
+
+		return false;
+	}
+	
 	//function to get the size of list
 	public static int listSize(Node head)
 	{
