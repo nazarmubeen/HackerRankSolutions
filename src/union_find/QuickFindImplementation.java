@@ -17,5 +17,17 @@ public class QuickFindImplementation {
 		uf.union(7, 2);
 		uf.union(6, 1);
 		uf.printNumbers();
+		System.out.println("weighted");
+		QuickFind ufw=new QuickFind(N);
+		ufw.unionQuickWeighted(3, 8);
+		ufw.unionQuickWeighted(4, 3);
+		ufw.unionQuickWeighted(9, 4);
+		ufw.unionQuickWeighted(6, 5);
+		ufw.unionQuickWeighted(2, 1);
+		ufw.unionQuickWeighted(5, 4);
+		ufw.unionQuickWeighted(5, 0);
+		ufw.unionQuickWeighted(7, 2);
+		ufw.unionQuickWeighted(6, 1);
+		uf.printNumbers();
 	}
 }
