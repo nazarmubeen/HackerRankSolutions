@@ -23,16 +23,23 @@ public class ShellSort{
 		{
 			h=3*h+1;
 		}
+		System.out.println("h= "+h);
 		while(h>=1)
 		{
 			for(int i=h;i<N;i++)
 			{
+				System.out.println("i= "+i);
+				
 				for(int j=i;j>=h && less(a[j],a[j-h]);j-=h)
 				{
+					System.out.println(" ");
+					System.out.print("j= "+j+" j-h ="+(j-h));
 					swap(a,j,j-h);
 				}
+				System.out.println(" ");
 			}
 			h=h/3;
+			System.out.println("h= "+h);
 		}
 		
 		
