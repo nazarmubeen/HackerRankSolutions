@@ -1,5 +1,8 @@
 package symboltable.binryserach;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BST<Key extends Comparable<Key>,Value> {
 
 	private Node root;
@@ -90,4 +93,25 @@ public class BST<Key extends Comparable<Key>,Value> {
 
 	}
 
+	
+	public Iterable<Key> keys()
+	{
+		Queue<Key> q=new LinkedList();
+		inOrder(root,q);
+		return q;
+		
+	}
+	
+private void inOrder(Node x,Queue<Key> q)
+	{
+		if(x==null)
+		{
+			return;
+		}
+		inOrder(x.left,q);
+		q.add((Key) x.key);
+		System.out.println("key="+x.key);
+		inOrder(x.right,q);
+		
+	}
 }
