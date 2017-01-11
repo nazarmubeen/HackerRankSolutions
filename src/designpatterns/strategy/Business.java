@@ -6,10 +6,7 @@ public abstract class Business {
 	BigBusiness bigbusiness;
 	
 	
-	public void run()
-	{
-		//body will be overriden by implementing class
-	}
+	public abstract void run();
 	
 	public void smallBusinessType()
 	{
