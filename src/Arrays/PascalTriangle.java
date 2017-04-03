@@ -43,6 +43,7 @@ public class PascalTriangle {
 		 }
 		 
 		 System.out.println(biglist);
+		 System.out.println(" ");
 		 return biglist;
 	        
 		 
