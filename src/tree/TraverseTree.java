@@ -15,7 +15,7 @@ public class TraverseTree {
 		preOrder(root.right);
 		
 	}
-	//preorder
+	//postorder
 	public static void postOrder(Node root) {
 
 		if(root==null)
