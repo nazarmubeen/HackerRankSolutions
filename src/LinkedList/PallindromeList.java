@@ -24,6 +24,7 @@ public class PallindromeList {
 			 //only element is pallindrome
 			 return 1;
 		 }
+		 
 		 Node slowptr=A;
 		 Node fastptr=A;
 		 
