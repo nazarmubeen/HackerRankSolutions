@@ -4,7 +4,7 @@ package Arrays;
  * 12345 to 34512
  */
 
-/*
+/* Left Rotation Program
  * sample input
  * 5 4(d=4 that is 4 rotations)
 	1 2 3 4 5
