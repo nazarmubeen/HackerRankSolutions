@@ -6,72 +6,69 @@ public class MaxNonNegativeSubArray {
 
 	public static void main(String[] args)
 	{
-		int[] A={   11,12,13,14,-3,15,16,37,-9,18,8 };
+		int[] A={ -8,1,2,5,-7,15,16,-2,-3,2,3,2,31};
 		print(maxset(A));
 	}
 	
 	public static int[] maxset(int[] A) {
 		
-		long sum=0;long maxSum=0;
-		int segmentLength=0;int maxSegmentLength=0;
-		int startIndex=0;int endIndex=0;
-		int maxStartIndex=0;int maxEndIndex=0;
-		int start=0;
+		int startIndex=0;int endindex=0;int maxSegmentLength=0;long maxSum=0;
+		
+		int start=0,end=0,segmentLength=0;
+		long sum=0;
 		
 		for(int i=0;i<A.length;i++)
 		{
+			if(start==0 && end==0)
+			{
+			start=i;
+			}
 			
-			if(A[i]<0)
+			if(A[i]>=0)
 			{
-				
-				if(sum>=maxSum || ((sum==maxSum) && segmentLength>maxSegmentLength))
-				{
-					System.out.println(" change start and max "+i);
-					maxStartIndex=startIndex;
-					maxEndIndex=endIndex;
-					System.out.println("maxStartIndex "+maxStartIndex);
-					System.out.println("maxEndIndex "+maxEndIndex);
-				}
-				maxSegmentLength=Math.max(segmentLength,maxSegmentLength);
-				segmentLength=0;
-				sum=0;
-				startIndex=0;
-				endIndex=0;
-				continue;
-			}
-			System.out.println(" startIndex " +startIndex+" at i "+i);
-			if(startIndex==0 && startIndex==endIndex)
-			{
-			System.out.println(" check for i  stsrt "+i);
-			startIndex=i;
-			}
 			sum=sum+A[i];
+			end=end+1;
 			segmentLength++;
-			endIndex=endIndex+1;
-			maxSum=Math.max(sum,maxSum);
-			System.out.println(" sum "+sum+" at i "+i);
-			System.out.println(" maxSum "+maxSum+" at i "+i);
-		}
-		
-		if(sum>=maxSum ||((sum==maxSum) && segmentLength>maxSegmentLength))
-		{
-			maxStartIndex=startIndex;
-			maxEndIndex=startIndex+endIndex-1;
-		}
-		else{
-			maxEndIndex=maxStartIndex+maxEndIndex-1;
-		}
-		System.out.println(" startIndex "+startIndex);
-		System.out.println("endIndex  "+endIndex);
+			}
+			else if(A[i]<0){
+				System.out.println("else if for "+A[i]+" at i "+i+" where sum is "+sum);
+				System.out.println("segment Length "+segmentLength);
+				if(sum==maxSum && segmentLength>maxSegmentLength)
+				{
+					startIndex=start;
+					endindex=end;
+					maxSegmentLength=segmentLength;
+				}
+				else if(sum>maxSum)
+				{
+					startIndex=start;
+					endindex=end;
+					maxSum=sum;
+					maxSegmentLength=segmentLength;
+				}
+				
+				sum=0;
+				segmentLength=0;	
+				end=0;
+				start=0;
+			}
 
-		System.out.println(" maxStartIndex "+maxStartIndex);
-		System.out.println("maxEndIndex  "+maxEndIndex);
-		System.out.println("maxSum "+maxSum);
-		System.out.println("maxSegmentLength "+maxSegmentLength);
+			
+			System.out.println("start "+start);
+			System.out.println("end  "+end);
+			System.out.println("startIndex "+startIndex);
+			System.out.println("endindex "+endindex);
+			System.out.println(" i at "+i+" length "+A.length);
+			if(i==A.length-1 && ((sum>maxSum) || (sum==maxSum && segmentLength>maxSegmentLength))) {
+				System.out.println(" last index check");
+				startIndex=start;
+				endindex=end;
+				maxSum=sum;
+			}
+		}
 		
-		return Arrays.copyOfRange(A, maxStartIndex, maxEndIndex+1); 
-    
-	
+		return Arrays.copyOfRange(A, startIndex,startIndex+endindex); 
+		
 	}
 	
 	
