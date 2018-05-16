@@ -36,8 +36,6 @@ public class RepeatAndMissingArray {
     	 int d=(int) (m-c1);
     	 //System.out.println(" m = "+m+"d= "+d);
     	 
-    	 
-    	 
-    	return {d,m};
+    	return new int[]{d,m};
     }
 }
