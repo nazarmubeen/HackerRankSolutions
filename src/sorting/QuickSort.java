@@ -45,11 +45,14 @@ public class QuickSort {
 		Comparable pivot=a[lo];
 		int i=1;
 		int j=hi;
-		
+		System.out.println(" a[lo] "+a[lo]);
+		System.out.println(" a[i] "+a[i]);
+		System.out.println(" a[j] "+a[j]);
 		while(true)
 		{
 			while(less(a[i],a[lo]))
 			{
+				System.out.println(" less(a[i],a[lo])");
 				i++;
 				if(i==hi)
 				{
@@ -60,6 +63,7 @@ public class QuickSort {
 			
 			while(less(a[lo],a[j]))
 			{
+				System.out.println("less(a[lo],a[j])");
 				j--;
 				if(j==lo)
 				{
@@ -73,10 +77,13 @@ public class QuickSort {
 			}
 			
 			swap(a,i,j);
-			
+			System.out.println("swap(a,i,j)");
+			print(a);
 			
 		}
 		swap(a, j, lo);
+		System.out.println("swap(a, j, lo);");
+		print(a);
 		System.out.println("partitioning at :- "+j +" value:-"+a[j]);
 		return j;
 	}

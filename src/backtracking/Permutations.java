@@ -20,14 +20,17 @@ public class Permutations {
 		boolean[] used=new boolean[a.size()];
 		ArrayList<ArrayList<Integer>> result=new ArrayList<ArrayList<Integer>>();
 		ArrayList<Integer> bf=new ArrayList<Integer>();
-		combine(a,bf,result,used);
+		int recursionPattern=0;
+		combine(a,bf,result,used,recursionPattern);
 		System.out.println("result "+ result);
 		return result;
 		
 	}
 	
-	public void combine(ArrayList<Integer> a,ArrayList<Integer> bf,ArrayList<ArrayList<Integer>> result,boolean[] used)
+	public void combine(ArrayList<Integer> a,ArrayList<Integer> bf,ArrayList<ArrayList<Integer>> result,boolean[] used, int recursionPattern)
 	{
+		recursionPattern++;
+	   System.out.println(" recursionPattern "+recursionPattern);
 		if(a.size()==bf.size())
 		{
 			result.add(new ArrayList<Integer>(bf));
@@ -37,6 +40,7 @@ public class Permutations {
 		
 		for(int i=0;i<a.size();i++)
 		{
+			System.out.println(" i= "+i);
 			if(used[i])
 			{
 			System.out.println("current character = "+a.get(i)+ " already in string ");
@@ -45,7 +49,9 @@ public class Permutations {
 			
 			bf.add(a.get(i));
 			used[i]=true;
-			combine(a,bf,result,used);
+			System.out.println(" call combine");
+			combine(a,bf,result,used,recursionPattern);
+			recursionPattern--;
 			used[i]=false;
 			System.out.println("removing = "+bf.get(bf.size()-1)+ "  in string ");
 			bf.remove(bf.size()-1);

@@ -19,6 +19,12 @@ public class InsertionSort {
 					break;	
 			}
 			
+			for(int k=0;k<a.length;k++)
+			{
+				System.out.print(" "+a[k]);
+			}
+			System.out.println(" ");
+			System.out.println(" i now "+i);
 			i++;
 		}
 	}
