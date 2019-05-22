@@ -2,6 +2,24 @@ package dynamicprogramming;
 
 import java.util.HashMap;
 
+/*
+ * 
+ * 
+Given two words A and B, find the minimum number of steps required to convert A to B. (each operation is counted as 1 step.)
+
+You have the following 3 operations permitted on a word:
+
+Insert a character
+Delete a character
+Replace a character
+
+Example : 
+edit distance between
+"Anshuman" and "Antihuman" is 2.
+
+Operation 1: Replace s with t.
+Operation 2: Insert i.
+ */
 public class EditDistance {
 
 	public static void main(String[] args) {
@@ -17,6 +35,7 @@ public class EditDistance {
 	 
 		// len1+1, len2+1, because finally return dp[len1][len2]
 		int[][] dp = new int[len1 + 1][len2 + 1];
+		
 		System.out.println("initial array");
 		printArray(dp,len1,len2);
 		 
@@ -38,7 +57,7 @@ public class EditDistance {
 			char c1 = word1.charAt(i);
 			for (int j = 0; j < len2; j++) {
 				char c2 = word2.charAt(j);
-	 System.out.println("i = "+i+"j=  "+j);
+	           System.out.println("i = "+i+" j=  "+j);
 				//if last two chars equal
 				if (c1 == c2) {
 					//update dp value for +1 length
@@ -65,7 +84,7 @@ public class EditDistance {
 	
 	void printArray(int[][] dp,int l1,int l2)
 	{
-		System.out.println(" ");
+		System.out.println(" ------------------------------ ");
 		for(int i=0;i<l1;i++)
 		{
 			System.out.println(" ");
@@ -75,5 +94,6 @@ public class EditDistance {
 			}
 		}
 		System.out.println(" ");
+		System.out.println("-------------------------------------- ");
 	}
 }
