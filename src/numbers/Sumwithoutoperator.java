@@ -10,7 +10,6 @@ public class Sumwithoutoperator {
 		int c=12;
 		
 		
-		
 		System.out.println("final result "+sum(a,b));
 		
 		System.out.println(" negation of x "+~c+1);
