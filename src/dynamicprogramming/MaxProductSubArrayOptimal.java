@@ -3,6 +3,8 @@ package dynamicprogramming;
 import java.util.ArrayList;
 import java.util.List;
 
+import Utils.ArrayUtil;
+
 public class MaxProductSubArrayOptimal {
 	public static int maxProduct(final List<Integer> a) {
 		  	int[] max = new int[a.size()];
@@ -15,11 +17,16 @@ public class MaxProductSubArrayOptimal {
 		        if(a.get(i)>0){
 		            max[i]=Math.max(a.get(i), max[i-1]*a.get(i));
 		            min[i]=Math.min(a.get(i), min[i-1]*a.get(i));
+		           
 		        }else{
 		            max[i]=Math.max(a.get(i), min[i-1]*a.get(i));
 		            min[i]=Math.min(a.get(i), max[i-1]*a.get(i));
 		        }
-		 
+		        
+		        ArrayUtil.printArray(max);
+		        ArrayUtil.printArray(min);
+	            
+	            System.out.println(" ");
 		        result = Math.max(result, max[i]);
 		    }
 		 
