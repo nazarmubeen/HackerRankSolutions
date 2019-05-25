@@ -76,6 +76,7 @@ public class EditDistance {
 					printArray(dp,len1,len2);
 					dp[i + 1][j + 1] = min;
 				}
+				
 			}
 		}
 		 printArray(dp,len1,len2);
