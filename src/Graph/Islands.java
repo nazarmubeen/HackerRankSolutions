@@ -39,7 +39,8 @@ class Islands {
 			boolean isSafe=isSafe(M, row + rowNbr[k], col + colNbr[k], visited);
 			System.out.println(" isSafe "+isSafe);
 			if (isSafe) 
-				DFS(M, row + rowNbr[k], col + colNbr[k], visited); 
+				DFS(M, row + rowNbr[k], col + colNbr[k], visited);
+			printArray(visited);
 		}
 	} 
 
@@ -58,7 +59,7 @@ class Islands {
 			for (int j = 0; j < COL; ++j) 
 				if (M[i][j] == 1 && !visited[i][j]) // If a cell with 
 				{ 
-					
+					printArray(visited);
 					// value 1 is not 
 					// visited yet, then new island found, Visit all 
 					// cells in this island and increment island count 
@@ -80,5 +81,22 @@ class Islands {
 		Islands I = new Islands(); 
 		System.out.println("Number of islands is: " + I.countIslands(M)); 
 	} 
+	
+	static void printArray(boolean[][] visited)
+	{
+		System.out.println("visited array ");
+		for(int i=0;i<visited.length;i++)
+		{
+			System.out.println();
+			for(int j=0;j<visited.length;j++)
+			{
+				
+			System.out.print(" "+visited[i][j]);
+		
+			}
+		}
+		
+		System.out.println(" ");
+	}
 } 
 
