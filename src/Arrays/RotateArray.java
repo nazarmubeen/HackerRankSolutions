@@ -38,6 +38,7 @@ public class RotateArray {
             
             // swap
             a.get(i).set(j,temp2);
+ 
             a.get(S-j).set(i,temp3);
             a.get(S-i).set(S-j,temp4);
             a.get(j).set(S-i,temp1);
