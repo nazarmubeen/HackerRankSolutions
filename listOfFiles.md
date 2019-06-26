@@ -1,7 +1,3 @@
-# Data Structure and Algorithms implementation in Java
-
-This project contains implementation of various problems and algorithms.
-
 Array:-
 
 src/Arrays/ContainerWithMostWater.java
