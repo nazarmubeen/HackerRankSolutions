@@ -55,8 +55,5 @@ public class MaxProductSubArray {
 		a.add(4);
 		System.out.println(maxProduct(a));
 		
-		
-		
-		
 	}
 }

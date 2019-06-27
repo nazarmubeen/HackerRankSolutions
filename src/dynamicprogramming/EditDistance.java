@@ -24,15 +24,15 @@ public class EditDistance {
 
 	public static void main(String[] args) {
 		EditDistance obj = new EditDistance();
-		String a = "sunday";
-		String b = "sataurday";
+		String a = "sam";
+		String b = "sadi";
 		obj.minDistance(a, b);
 	}
 
 	public int minDistance(String word1, String word2) {
 		int len1 = word1.length();
 		int len2 = word2.length();
-	 
+	    System.out.println("len 1 "+len1+"len2 "+len2);
 		// len1+1, len2+1, because finally return dp[len1][len2]
 		int[][] dp = new int[len1 + 1][len2 + 1];
 		
@@ -86,6 +86,8 @@ public class EditDistance {
 	void printArray(int[][] dp,int l1,int l2)
 	{
 		System.out.println(" ------------------------------ ");
+		l1++;
+		l2++;
 		for(int i=0;i<l1;i++)
 		{
 			System.out.println(" ");

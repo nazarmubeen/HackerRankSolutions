@@ -44,13 +44,13 @@ public class LongestIncreasingSubSequence {
             
             for (int j = 0; j < i; j++) {
             
-                System.out.println("nums[i]="+nums[i]);
-                System.out.println("nums[j]="+nums[j]);
+             //   System.out.println("nums[i]="+nums[i]);
+             //   System.out.println("nums[j]="+nums[j]);
                 if (nums[i] > nums[j]) {
-                	System.out.println("true "+nums[i]+">" + nums[j]);
-                	System.out.println("maximum"+maxval+"or"+ dp[j]);
+                	//System.out.println("true "+nums[i]+">" + nums[j]);
+                	//System.out.println("maximum"+maxval+"or"+ dp[j]);
                     maxval = Math.max(maxval, dp[j]);
-                    System.out.println("maxval="+maxval);
+                   // System.out.println("maxval="+maxval);
                 }
             }
             dp[i] = maxval + 1;
