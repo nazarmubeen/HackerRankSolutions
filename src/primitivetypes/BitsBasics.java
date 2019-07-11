@@ -6,6 +6,7 @@ public class BitsBasics {
 	public static void main(String[] args)
 	{
 		System.out.println( 6 & 4);
+		System.out.println( 6 & 1);
 		System.out.println(6 | 4);
 		System.out.println(8>>1);
 		System.out.println(8>>>2);
@@ -13,6 +14,7 @@ public class BitsBasics {
 		//shifting a number by one is equivalent to multiplying it by 2, or, in general,
 		//left shifting a number by n positions is equivalent to multiplication by 2^n.
 		System.out.println(2<<1); //multiply by 2
+		System.out.println(2<<5); //multiply by 2
 		System.out.println(2<<2);
 		System.out.println(2<<3);
 		//right shift operator (if negative empty space will be filled with 1 else 0

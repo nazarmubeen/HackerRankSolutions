@@ -16,7 +16,7 @@ public class Trie {
 	 
 	        for(int i=0; i<word.length(); i++){
 	            char c = word.charAt(i);
-	 System.out.println("character "+c);
+	            System.out.println("character "+c);
 	            TrieNode t;
 	            if(children.containsKey(c)){
 	            	 System.out.println("node is already there in the trie "+c);
