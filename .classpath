@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/apiguardian-api-1.1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/assertj-core-3.12.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/assertj-db-1.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/assertj-guava-3.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/byte-buddy-1.9.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/byte-buddy-agent-1.9.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/common-1.26.109.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/junit5-1.26.109.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/junit-jupiter-api-5.5.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/junit-platform-commons-1.5.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/mockito-core-2.28.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/mockito-kotlin-1.6.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/objenesis-2.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/jar_files/opentest4j-1.2.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_121">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
