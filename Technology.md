@@ -10,3 +10,7 @@ This page contains data that company wants these days :-
 8.  Oops & Design Principles
 9.  Collections & Fundamentals
 10. Java Memory Management
+
+spring basics:- 
+
+https://www.greycampus.com/blog/programming/top-spring-interview-questions-and-answers
