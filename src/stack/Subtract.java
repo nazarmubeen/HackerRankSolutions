@@ -1,10 +1,8 @@
 package stack;
 
-import java.util.Stack;
-
-import com.sun.org.apache.xalan.internal.xsltc.runtime.Node;
-
 import LinkedList.ListNode;
+
+import java.util.Stack;
 
 public class Subtract {
 	

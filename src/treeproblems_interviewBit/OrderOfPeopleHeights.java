@@ -2,10 +2,7 @@ package treeproblems_interviewBit;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.TreeMap;
-
-import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
 
 public class OrderOfPeopleHeights {
 	

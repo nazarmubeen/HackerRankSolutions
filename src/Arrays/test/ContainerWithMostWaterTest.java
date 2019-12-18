@@ -1,13 +1,12 @@
 package Arrays.test;
 
-import static org.junit.Assert.*;
+import Arrays.ContainerWithMostWater;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import org.junit.Test;
-
-import Arrays.ContainerWithMostWater;
+import static org.junit.Assert.assertNotNull;
 
 public class ContainerWithMostWaterTest {
 

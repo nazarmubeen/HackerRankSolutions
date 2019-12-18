@@ -1,7 +1,5 @@
 package interviewbit;
 
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
-
 public class AntiDiagonals {
 
 	

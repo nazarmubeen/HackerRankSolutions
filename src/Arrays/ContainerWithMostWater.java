@@ -2,7 +2,6 @@ package Arrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 /*Given n non-negative integers a1, a2, ..., an,
 where each represents a point at coordinate (i, ai).

@@ -2,8 +2,6 @@ package treeproblems_interviewBit;
 
 import java.util.ArrayList;
 
-import com.sun.org.apache.xalan.internal.xsltc.runtime.Node;
-
 public class KthSmallestElementTree {
 
 	public static void main(String[] args)

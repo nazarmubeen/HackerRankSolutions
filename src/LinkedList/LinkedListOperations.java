@@ -1,12 +1,10 @@
 package LinkedList;
 
-import java.util.HashMap;
-
 public class LinkedListOperations {
 
 	
 	/*
-	 * You’re given the pointer to the head nodes
+	 * You are given the pointer to the head nodes
 	 *  of two linked lists. Compare the data in the
 	 *   nodes of the linked lists to check if they are
 	 *    equal. The lists are equal only if they have 

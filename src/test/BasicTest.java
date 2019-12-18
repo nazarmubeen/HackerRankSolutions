@@ -1,6 +1,7 @@
 package test;
 
 import org.junit.Test;
+
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class BasicTest {

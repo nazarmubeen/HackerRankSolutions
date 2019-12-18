@@ -1,7 +1,5 @@
 package dynamicprogramming.usingArray;
 
-import java.util.List;
-
 public class BuySellStocks {
 
 	public static void main(String[] args) {
