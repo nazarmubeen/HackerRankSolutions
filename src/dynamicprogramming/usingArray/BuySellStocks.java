@@ -5,7 +5,7 @@ import java.util.List;
 public class BuySellStocks {
 
 	public static void main(String[] args) {
-		int[] a = { 7, 1, 5, 3, 6, 4 };
+		int[] a = { 7, 1, 5, 3, 6, 4,9 };
 		System.out.println(maxProfit(a));
 	}
 
