@@ -60,7 +60,7 @@ public class BuySellStocks3 {
         if (a.size() == 0) return 0;
 
         int fB = Integer.MIN_VALUE; int fS = 0;
-        int sB = Integer.MIN_VALUE; int sS = 0;
+        int sB = Integer.MIN_VALUE; int sS = 0 ;
 
         for (Integer curPrice : a) {
             fB = Math.max(fB, -curPrice);
