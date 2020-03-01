@@ -9,7 +9,7 @@ public class SmallestSubarrayforAGivenSUM {
         findMinSubArray(s,arr);
     }
 
-    public static int findMinSubArray(int sum, int[] arr) {
+    public static int findMinSubArray(int  sum, int[] arr) {
         int windowSum = 0, minLength = Integer.MAX_VALUE;
         int windowStart = 0;
         for (int windowEnd = 0; windowEnd < arr.length; windowEnd++) {
