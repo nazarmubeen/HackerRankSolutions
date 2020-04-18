@@ -1,9 +1,6 @@
 package Arrays;
 
-import java.util.Arrays;
-import java.util.HashMap;
-
-import Utils.ArrayUtil;
+import Utils.ArrayUtilFunc;
 
 public class MaxDistance {
 
@@ -40,7 +37,7 @@ public class MaxDistance {
         for (i = 1; i < n; ++i)
             LMin[i] = min(A[i], LMin[i - 1]);
         
-       ArrayUtil.printArray(LMin);
+       ArrayUtilFunc.printArray(LMin);
  
         /* Construct RMax[] such that RMax[j] stores the maximum value
            from (arr[j], arr[j+1], ..arr[n-1]) */
@@ -48,7 +45,7 @@ public class MaxDistance {
         for (j = n - 2; j >= 0; --j)
             RMax[j] = max(A[j], RMax[j + 1]);
         
-        ArrayUtil.printArray(RMax);
+        ArrayUtilFunc.printArray(RMax);
         /* Traverse both arrays from left to right to find optimum j - i
            This process is similar to merge() of MergeSort */
         i = 0; j = 0; maxDiff = -1;

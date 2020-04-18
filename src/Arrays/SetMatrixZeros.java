@@ -3,8 +3,6 @@ package Arrays;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import Utils.ArrayUtil;
-
 public class SetMatrixZeros {
 
 	public static void main(String[] args)

@@ -2,7 +2,7 @@ package Utils;
 
 import java.util.Random;
 
-public class ArrayUtil {
+public class ArrayUtilFunc {
 
 	public static void printArray(int[] arr)
 	{
@@ -27,6 +27,29 @@ public class ArrayUtil {
 		}
 		printArray(arr);
 		return arr;
+	}
+
+	static void printMatrix(int[][] arr){
+
+		for(int row=0;row<arr.length;row++){
+			for(int col=0;col<arr.length;col++){
+				System.out.print( arr[row][col]+" ");
+			}
+			System.out.println(" ");
+		}
+
+	}
+
+	static int[][] generateMatrix(int length,int range){
+
+		int[][] arr=new int[length][length];
+		for(int row=0;row<arr.length-1;row++){
+			for(int col=0;col<arr[row].length-1;col++){
+				arr[row][col]=new Random().nextInt(range);
+			}
+			System.out.println(" ");
+		}
+return arr;
 	}
 	
 	public static void main(String[] args)

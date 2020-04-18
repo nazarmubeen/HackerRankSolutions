@@ -1,7 +1,5 @@
 package Arrays;
 
-import Utils.ArrayUtil;
-
 public class SpiralOrder1 {
 
 	public static void main(String[] args)

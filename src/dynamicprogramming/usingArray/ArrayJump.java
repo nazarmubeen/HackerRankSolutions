@@ -1,6 +1,6 @@
 package dynamicprogramming.usingArray;
 
-import Utils.ArrayUtil;
+import Utils.ArrayUtilFunc;
 
 class ArrayJump {
 
@@ -16,7 +16,7 @@ class ArrayJump {
                // ArrayUtil.printArray(dp);
                // System.out.println("after");
                 dp[end] = Math.min(dp[end], dp[start]+1);
-                ArrayUtil.printArray(dp);
+                ArrayUtilFunc.printArray(dp);
             }
 
             System.out.println(" start "+start);

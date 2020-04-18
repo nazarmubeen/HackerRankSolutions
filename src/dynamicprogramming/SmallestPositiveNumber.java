@@ -1,6 +1,6 @@
 package dynamicprogramming;
 
-import Utils.ArrayUtil;
+import Utils.ArrayUtilFunc;
 
 public class SmallestPositiveNumber {
    
@@ -47,7 +47,7 @@ public class SmallestPositiveNumber {
           arr[x - 1] = -arr[x - 1]; 
       } 
       
-      ArrayUtil	.printArray(arr);
+      ArrayUtilFunc.printArray(arr);
       // Return the first index value at which  
       // is positive 
       for(i = 0; i < size; i++) 
@@ -65,9 +65,9 @@ public class SmallestPositiveNumber {
     { 
        // First separate positive and  
        // negative numbers 
-    	ArrayUtil.printArray(arr);
+    	ArrayUtilFunc.printArray(arr);
        int shift = segregate (arr, size); 
-       ArrayUtil.printArray(arr);
+       ArrayUtilFunc.printArray(arr);
        int arr2[] = new int[size-shift]; 
        int j=0; 
        for(int i=shift;i<size;i++) 
@@ -75,7 +75,7 @@ public class SmallestPositiveNumber {
                arr2[j] = arr[i]; 
                j++; 
            }   
-       ArrayUtil.printArray(arr2);
+       ArrayUtilFunc.printArray(arr2);
        // Shift the array and call  
        // findMissingPositive for 
        // positive part 
