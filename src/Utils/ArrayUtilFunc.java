@@ -12,7 +12,17 @@ public class ArrayUtilFunc {
 		}
 		System.out.println(" ");
 	}
-	
+
+	public static void printArray(char[] arr)
+	{
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.print(" "+arr[i]);
+		}
+		System.out.println(" ");
+	}
+
+
 	static int[]  generateArray(int number)
 	{
 		Random random = new Random(1);

@@ -1,0 +1,56 @@
+package leetcodemaychallenge.topquestion.linkedlist;
+
+public class LinkedListProblems {
+
+    public static void main(String[] args){
+
+        ListNode head=new ListNode(4);
+
+        ListNode f=new ListNode(2);
+        head.next=f;
+        ListNode s=new ListNode(1);
+         f.next=null;
+        ListNode t=new ListNode(9);
+        s.next=t;
+
+        removeNthFromEnd(head,1);
+    }
+
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
+    }
+
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+
+        ListNode temp=head;
+        ListNode del=head;
+        ListNode prev=null;
+
+        while(n>0){
+            temp=temp.next;
+            n--;
+        }
+
+        while(temp!=null){
+            temp=temp.next;
+            prev=del;
+            del=del.next;
+
+        }
+
+        if(del.next!=null){
+            del.val=del.next.val;
+            del.next=del.next.next;
+        }
+        else if(del==head){
+            head=null;
+        }
+        else{
+            prev.next=null;
+        }
+        return head;
+
+    }
+}
+
