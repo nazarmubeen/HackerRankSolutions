@@ -1,7 +1,6 @@
 package leetcodemaychallenge.topquestion.arrays;
 
-import java.util.HashMap;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class ArrayProblems {
 
@@ -117,5 +116,210 @@ public int[] topKFrequent(int[] nums, int k) {
         return n;
     }
 
+//https://leetcode.com/explore/interview/card/top-interview-questions-medium/110/sorting-and-searching/801/
+    public int findPeakElement(int[] nums) {
 
+        int min=0;
+        int peak=0;
+
+        for(int i=1;i<nums.length;i++){
+
+            if(nums[i]>nums[min]){
+                min++;
+            }
+            else{
+                //       System.out.println(" i "+i);
+                peak=min;
+                return peak;
+            }
+        }
+
+        return min;
+    }
+
+//https://leetcode.com/explore/interview/card/top-interview-questions-medium/110/sorting-and-searching/803/
+    public int[][] merge(int[][] intervals) {
+
+        if(intervals==null || intervals.length<=1){
+            return intervals;
+        }
+
+        Arrays.sort(intervals,new java.util.Comparator<int[]>() {
+            public int compare(int[] a, int[] b) {
+                return a[0]- b[0];
+            }
+        });
+
+        ArrayList<int[]> result=new ArrayList<>();
+
+       result.addAll()
+        int[] prevArray=intervals[0];
+        result.add(prevArray);
+
+
+        for(int i=1;i<intervals.length;i++){
+
+            int[] currentArray=intervals[i];
+
+            if(prevArray[1]>=currentArray[0] || prevArray[0]>=currentArray[1]){
+                int start=prevArray[0]>=currentArray[0]?currentArray[0]:prevArray[0];
+                int end=prevArray[1]>=currentArray[1]?prevArray[1]:currentArray[1];
+                int[] newArray={start,end};
+                result.remove(result.size()-1);
+                result.add(newArray);
+                prevArray=newArray;
+                continue;
+            }
+            result.add(currentArray);
+            prevArray=currentArray;
+        }
+
+
+
+        int[][] fresult=new int[result.size()][2];
+
+        for(int i=0;i<fresult.length;i++){
+            fresult[i]=result.get(i);
+        }
+
+        return fresult;
+    }
+
+    //https://leetcode.com/explore/interview/card/top-interview-questions-medium/110/sorting-and-searching/802/
+    public int[] searchRange(int[] nums, int target) {
+
+        int[] finalAr={-1,-1};
+
+        return searchMidIndex(nums,0,nums.length-1,target,finalAr);
+
+    }
+
+    int[] searchMidIndex(int[] nums, int start , int end,int target,int[] finalAr){
+
+        if(start<0 || end>=nums.length || start>end){
+            return finalAr;
+        }
+
+        int mid=start+((end-start)/2);
+        //    System.out.println("mid "+mid);
+        if(nums[mid]==target){
+
+            int leftIndex= lowIndex(mid-1,target,nums);
+            //         System.out.println("leftIndex "+leftIndex);
+            int rightIndex= rightIndex(mid+1,target,nums);
+            //          System.out.println("rightIndex "+rightIndex);
+            finalAr[0]=leftIndex;
+            finalAr[1]=rightIndex;
+            return finalAr;
+        }
+        else if(nums[mid]<target){
+            searchMidIndex(nums,mid+1,end,target,finalAr);
+        }
+        else{
+            searchMidIndex(nums,start,mid-1,target,finalAr);
+        }
+
+        return finalAr;
+    }
+
+    int lowIndex(int index,int target,int[] nums){
+
+        while(index>=0 && nums[index]==target){
+            index--;
+        }
+
+        return index+1;
+    }
+
+    int rightIndex(int index,int target,int[] nums){
+
+        while(index<nums.length && nums[index]==target){
+            index++;
+        }
+
+        return index-1;
+    }
+
+    //https://leetcode.com/explore/interview/card/top-interview-questions-medium/110/sorting-and-searching/806/
+
+    public boolean searchMatrix(int[][] matrix, int target) {
+
+        if(matrix==null || matrix.length<1)
+            return false;
+        //    target=20;
+        int rowLength=matrix.length;
+        int colLength=matrix[0].length;
+
+        int i=0,j=0;
+
+        while(i<rowLength && j<colLength && i>=0 && j>=0){
+            //    System.out.println("start loop "+matrix[i][j]);
+            //    System.out.println("i "+ i +" j "+j);
+            while( j<colLength && matrix[i][j]<=target){
+
+                if(matrix[i][j]==target)
+                    return true;
+                j++;
+            }
+            if(j==colLength)
+                j--;
+
+            //      System.out.println("j loop "+matrix[i][j]);
+
+
+            while(i<rowLength  && j<colLength && matrix[i][j]<=target){
+                if(matrix[i][j]==target)
+                    return true;
+                i++;
+            }
+
+            if(i==rowLength)
+                i--;
+
+            //        System.out.println("i loop "+matrix[i][j]);
+            j--;
+            colLength=j+1;
+        }
+
+        return false;
+    }
+
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> result=new ArrayList<>();
+        List<Integer> list;
+        for(int i=0;i<nums.length;i++){
+
+            list=new ArrayList<Integer>();
+            int s=0-nums[i];
+            System.out.println("s "+s);
+            list.add(nums[i]);
+            for(int j=i+1;j<nums.length;j++){
+                int b=s-nums[j];
+                System.out.println("b "+b);
+                list.add(nums[j]);
+                System.out.println("list "+list);
+                for(int k=j+1;k<nums.length;k++){
+                    if(nums[k]==b){
+                        list.add(nums[k]);
+                        System.out.println("list "+list);
+                        ArrayList<Integer> newlist=new ArrayList<>();
+                        newlist.addAll(list);
+                        Collections.sort(newlist);
+                        if(!list.contains(newlist))
+                        result.add(newlist);
+                        System.out.println("result "+result);
+                        list.remove(list.size()-1);
+                    }
+
+
+                }
+                list.remove(list.size()-1);
+            }
+
+
+            list.remove(list.size()-1);
+
+        }
+        return result;
+    }
 }

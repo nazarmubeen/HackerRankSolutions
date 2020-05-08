@@ -46,4 +46,48 @@ public class TreeProblems {
         helper(root.left,currentLevel+1,lists);
         helper(root.right,currentLevel+1,lists);
     }
+
+
+
+    public boolean isCousins(TreeNode root, int x, int y) {
+        int[] depths={-1,-1};
+        depths=depth(root,x,y,depths,0);
+        //   System.out.println(" "+depths[0]+" "+depths[1]);
+        if(depths[0]!=-1 && depths[0]==depths[1]){
+            return true;
+        }
+        return false;
+    }
+//https://leetcode.com/explore/featured/card/may-leetcoding-challenge/534/week-1-may-1st-may-7th/3322/
+    int[] depth(TreeNode root, int x, int y,int[] depths,int curDepth){
+
+        if(root==null){
+            return depths;
+        }
+
+        if(root.val==x){
+            depths[0]=curDepth;
+            return depths;
+        }
+
+        if(root.val==y){
+            depths[1]=curDepth;
+            return depths;
+        }
+
+        if(depths[0]!=-1 && depths[1]!=-1){
+            return depths;
+        }
+
+        if(root.right != null && root.left!=null)
+            if((x==root.right.val && y==root.left.val) || (x==root.left.val && y==root.right.val)){
+                return depths;
+            }
+
+        depths=depth(root.left,x,y,depths,curDepth+1);
+        depths=depth(root.right,x,y,depths,curDepth+1);
+
+        return depths;
+    }
+
 }

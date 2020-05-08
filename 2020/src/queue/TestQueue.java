@@ -6,7 +6,21 @@ public class TestQueue {
 
     public static void main(String[] args){
 
-        ArrayList<Integer> number=new ArrayList<Integer>(Arrays.asList(21,22,56,98,78,5,1,45,3,6,25,456,0));
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        PriorityQueue<Integer> minpq = new PriorityQueue<>((n1,n2)->(n1-n2));
+        PriorityQueue<Integer> maxpq = new PriorityQueue<>((n1,n2)->(n2-n1));
+        int[] arr={3,2,1,5,6,4};
+        for(int i:arr){
+            pq.add(i);
+            minpq.add(i);
+            maxpq.add(i);
+        }
+
+        System.out.println("pq "+pq);
+        System.out.println("minpq "+minpq);
+        System.out.println("maxpq "+maxpq);
+
+       /* ArrayList<Integer> number=new ArrayList<Integer>(Arrays.asList(21,22,56,98,78,5,1,45,3,6,25,456,0));
         PriorityQueue<Integer> minHeap=new PriorityQueue<>();
         PriorityQueue<Integer> defaultHeap=new PriorityQueue<>(number.size(), new Comparator<Integer>() {
             @Override
@@ -32,7 +46,7 @@ public class TestQueue {
             System.out.println(minHeap.poll());
             System.out.println(maxHeap.poll());
             System.out.println(defaultHeap.poll());
-        }
+        }*/
 
     }
 }
