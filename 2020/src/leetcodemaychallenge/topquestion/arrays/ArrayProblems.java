@@ -1,5 +1,6 @@
 package leetcodemaychallenge.topquestion.arrays;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public class ArrayProblems {
@@ -321,5 +322,42 @@ public int[] topKFrequent(int[] nums, int k) {
 
         }
         return result;
+    }
+
+    public boolean checkStraightLine(int[][] coordinates) {
+
+        if(coordinates.length<=1){
+            return false;
+        }
+
+        int[] prevPoint=coordinates[0];
+        float slope=-1;
+
+        for(int i=1;i<coordinates.length;i++){
+            int[] currentPoint=coordinates[i];
+
+            if(currentPoint[1]-prevPoint[1]==0 ||currentPoint[0]-prevPoint[0]==0){
+                prevPoint=currentPoint;
+                continue;
+            }
+
+            float currentSlope=(float)(currentPoint[1]-prevPoint[1])/(currentPoint[0]-prevPoint[0]);
+
+            if (slope==-1){
+                slope=currentSlope;
+            }
+
+            String a="";
+            a.isEmpty()
+
+
+            if(currentSlope!=slope){
+                return false;
+            }
+            // System.out.println("slope of i "+slope+ " "+i);
+            prevPoint=currentPoint;
+        }
+
+        return true;
     }
 }
