@@ -2,8 +2,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>Algorithms</groupId>
   <artifactId>Algorithms</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>DataStructuresInJava</name>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>DataStructure</module>
+    </modules>
+    <name>DataStructuresInJava</name>
   <description>Data Structure Implementation In Java</description>
   <dependencies>
     <dependency>
