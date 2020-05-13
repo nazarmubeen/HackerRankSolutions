@@ -398,4 +398,23 @@ public int[] topKFrequent(int[] nums, int k) {
 
     }
 
+
+//https://leetcode.com/explore/featured/card/may-leetcoding-challenge/535/week-2-may-8th-may-14th/3327/
+
+
+    public int Duplicate(int[] nums) {
+        int i = 0;
+
+        while (i < nums.length - 1) {
+
+            if (nums[i] != nums[i + 1]) {
+                break;
+            }
+
+            i = i + 2;
+        }
+
+        return nums[i];
+    }
+
 }
