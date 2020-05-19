@@ -1,19 +1,17 @@
 package main.java.Graph;
 
 //Java program to count islands in boolean 2D matrix 
-import java.lang.*;
 
-class Islands { 
-	// No of rows and columns 
-	static final int ROW = 5, COL = 5; 
+class Islands {
+    // No of rows and columns
+    static final int ROW = 5, COL = 5;
 
-	// A function to check if a given cell (row, col) can 
-	// be included in DFS 
-	boolean isSafe(int M[][], int row, int col, 
-				boolean visited[][]) 
-	{ 
-		System.out.println(" row number "+row);
-		System.out.println(" column number "+ col);
+    // A function to check if a given cell (row, col) can
+    // be included in DFS
+    boolean isSafe(int M[][], int row, int col,
+                   boolean visited[][]) {
+        System.out.println(" row number " + row);
+        System.out.println(" column number " + col);
 		// row number is in range, column number is in range 
 		// and value is 1 and not yet visited 
 		return (row >= 0) && (row < ROW) && (col >= 0) && (col < COL) && (M[row][col] == 1 && !visited[row][col]); 

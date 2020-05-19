@@ -1,9 +1,9 @@
 package main.java.dynamicprogramming;
 
+import main.java.Utils.ArrayUtilFunc;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import main.java.Utils.ArrayUtilFunc;
 
 public class MaxProductSubArrayOptimal {
 	public static int maxProduct(final List<Integer> a) {

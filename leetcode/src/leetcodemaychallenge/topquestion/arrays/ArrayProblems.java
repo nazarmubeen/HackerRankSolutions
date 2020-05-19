@@ -417,4 +417,30 @@ public int[] topKFrequent(int[] nums, int k) {
         return nums[i];
     }
 
+    //https://leetcode.com/explore/featured/card/may-leetcoding-challenge/536/week-3-may-15th-may-21st/3330/
+    public int maxSubarraySumCircular(int[] array) {
+        int acc = 0;
+        int max1 = kadane(array);
+        for (int i = 0; i < array.length; i++) {
+            acc += array[i];
+            array[i] = -array[i];
+        }
+        int min = kadane(array);
+        int max2 = acc + min;
+        if (max2 == 0) {
+            return max1;
+        }
+        return Math.max(max1, max2);
+    }
+
+    public int kadane(int[] array) {
+        int maxTillI = array[0];
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            maxTillI = Math.max(maxTillI + array[i], array[i]);
+            max = Math.max(max, maxTillI);
+        }
+        return max;
+    }
+
 }

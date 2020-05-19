@@ -1,6 +1,6 @@
 package leetcodemaychallenge.topquestion.strings;
 
-import Utils.ArrayUtilFunc;
+import Utils.*;
 
 import java.util.*;
 
@@ -132,14 +132,90 @@ return true;
         return true;
     }
 
-    static boolean isAlpha(char c){
+    static boolean isAlpha(char c) {
 
-        if( (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
             return true;
         else
             return false;
     }
 
+    public List<Integer> findAnagrams(String s, String p) {
+
+        int[] anaArray = new int[26];
+
+        List<Integer> answer = new ArrayList<Integer>();
+        for (int i = 0; i < p.length(); i++) {
+            //System.out.println(anaArray[p.charAt(i)-'a']);
+            anaArray[p.charAt(i) - 'a']++;
+            //   System.out.println(anaArray[p.charAt(i)-'a']);
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            boolean isFound = true;
+            int[] secArray = new int[26];
+
+            for (int j = i; j < i + p.length(); j++) {
+                //       System.out.println("i "+i+" j "+j);
+                int index = s.charAt(j) - 'a';
+                //        System.out.println("index "+index);
+                secArray[index] = secArray[index] + 1;
+
+                if (anaArray[index] == 0) {
+                    isFound = false;
+                    i = j;
+                    break;
+                }
+
+                if (j >= s.length() - 1)
+                    break;
+
+            }
+
+            for (int k = 0; k < secArray.length; k++) {
+                //   System.out.println("k "+k+"secArray "+secArray[k]+" anaArray "+anaArray[k]);
+                if (anaArray[k] != secArray[k]) {
+                    isFound = false;
+                    break;
+                }
+            }
+            //  System.out.println("isFound "+isFound);
+            if (isFound)
+                answer.add(i);
+        }
+
+        return answer;
+    }
+
+    public List<Integer> findAnagrams2(String s, String p) {
+
+        int[] anaArray = new int[26];
+        int plength = p.length();
+        List<Integer> answer = new ArrayList<Integer>();
+        for (int i = 0; i < p.length(); i++) {
+            //System.out.println(anaArray[p.charAt(i)-'a']);
+            anaArray[p.charAt(i) - 'a']++;
+            //   System.out.println(anaArray[p.charAt(i)-'a']);
+        }
+
+        int[] secArray = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            boolean isFound = true;
+
+            int index = s.charAt(i) - 'a';
+            if (i >= p.length()) {
+                secArray[s.charAt(i - plength) - 'a']--;
+            }
+            secArray[index]++;
+
+            if (Arrays.equals(secArray, anaArray))
+                answer.add(i - plength + 1);
+
+        }
+
+
+        return answer;
+    }
 
 
 }
