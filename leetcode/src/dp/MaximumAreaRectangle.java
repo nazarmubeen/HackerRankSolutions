@@ -1,10 +1,5 @@
 package dp;
 
-import Utils.ArrayUtilFunc;
-
-import java.util.Arrays;
-import java.util.Random;
-
 public class MaximumAreaRectangle {
 
     public static int solve(int[][] A) {

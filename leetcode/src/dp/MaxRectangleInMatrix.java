@@ -1,6 +1,6 @@
 package dp;
 
-import Utils.ArrayUtilFunc;
+import Algo.Utils.ArrayUtilFunc;
 
 import java.util.Stack;
 

@@ -1,8 +1,5 @@
 package dp;
 
-import Utils.ArrayUtilFunc;
-import sun.awt.image.IntegerComponentRaster;
-
 public class MinimumJump {
 
     public static int jump(int[] A) {

@@ -1,10 +1,8 @@
 package leetcodemaychallenge.topquestion.arrays;
 
-import Utils.ArrayUtilFunc;
+import Algo.Utils.ArrayUtilFunc;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 
 public class RotateArray {
 
