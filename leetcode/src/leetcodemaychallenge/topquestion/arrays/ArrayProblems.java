@@ -1,6 +1,5 @@
 package leetcodemaychallenge.topquestion.arrays;
 
-import java.math.BigDecimal;
 import java.util.*;
 
 public class ArrayProblems {
@@ -81,16 +80,16 @@ public int[] topKFrequent(int[] nums, int k) {
             new PriorityQueue<Integer>((n1, n2) -> map.get(n1) - map.get(n2));
 
     // keep k top frequent elements in the heap
-    for (int n: map.keySet()) {
+    for (int n : map.keySet()) {
         heap.add(n);
         if (heap.size() > k)
             heap.poll();
     }
 
-    int n=karray.length-1;
+    int n = karray.length - 1;
 
-    while (!heap.isEmpty() && n>=0){
-        karray[n]=heap.poll();
+    while (!heap.isEmpty() && n >= 0) {
+        karray[n] = heap.poll();
         n--;
     }
 
@@ -98,12 +97,59 @@ public int[] topKFrequent(int[] nums, int k) {
     return karray;
 }
 
-//https://leetcode.com/explore/interview/card/top-interview-questions-medium/110/sorting-and-searching/800/
+    //https://leetcode.com/problems/unique-paths-ii/
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
+
+        int[][] matrix = new int[m][n];
+
+        if (obstacleGrid[m - 1][n - 1] == 1)
+            return 0;
+
+        if (obstacleGrid[0][0] == 1) {
+            matrix[0][0] = 0;
+        } else {
+            matrix[0][0] = 1;
+        }
+
+        for (int i = 1; i < n; i++) {
+            if (obstacleGrid[0][i] == 0) {
+                matrix[0][i] = matrix[0][i - 1];
+            } else {
+                matrix[0][i] = 0;
+            }
+        }
+
+        for (int j = 1; j < m; j++) {
+            if (obstacleGrid[j][0] == 0) {
+                matrix[j][0] = matrix[j - 1][0];
+            } else {
+                matrix[j][0] = 0;
+            }
+        }
+
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                if (obstacleGrid[i][j] == 0) {
+                    matrix[i][j] = matrix[i][j - 1] + matrix[i - 1][j];
+                } else {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        return matrix[m - 1][n - 1];
+
+    }
+
+    //https://leetcode.com/explore/interview/card/top-interview-questions-medium/110/sorting-and-searching/800/
     public int findKthLargest(int[] nums, int k) {
 
-        PriorityQueue<Integer> q=new PriorityQueue<>((n1,n2)-> n2-n1);
+        PriorityQueue<Integer> q = new PriorityQueue<>((n1, n2) -> n2 - n1);
 
-        for(int i:nums){
+        for (int i : nums) {
             q.add(i);
         }
 
