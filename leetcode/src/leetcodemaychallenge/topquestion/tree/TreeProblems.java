@@ -1,9 +1,7 @@
 package leetcodemaychallenge.topquestion.tree;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 public class TreeProblems {
 
@@ -80,14 +78,58 @@ public class TreeProblems {
         }
 
         if(root.right != null && root.left!=null)
-            if((x==root.right.val && y==root.left.val) || (x==root.left.val && y==root.right.val)){
+            if ((x == root.right.val && y == root.left.val) || (x == root.left.val && y == root.right.val)) {
                 return depths;
             }
 
-        depths=depth(root.left,x,y,depths,curDepth+1);
-        depths=depth(root.right,x,y,depths,curDepth+1);
+        depths = depth(root.left, x, y, depths, curDepth + 1);
+        depths = depth(root.right, x, y, depths, curDepth + 1);
 
         return depths;
+    }
+
+
+    public TreeNode bstFromPreorder(int[] preorder) {
+
+        TreeNode root = new TreeNode(preorder[0], null, null);
+
+        for (int i = 1; i < preorder.length; i++) {
+            addNode(preorder[i], root);
+        }
+
+        return root;
+
+    }
+
+    TreeNode addNode(int val, TreeNode root) {
+
+        if (root == null) {
+            //    System.out.println("val "+val);
+            TreeNode node = new TreeNode(val, null, null);
+            return node;
+        }
+
+        if (root.val < val) {
+            // System.out.println("right ");
+            if (root.right != null)
+                addNode(val, root.right);
+            else {
+                root.right = addNode(val, root.right);
+                return root;
+            }
+        }
+
+        if (root.val > val) {
+            //     System.out.println("left");
+            if (root.left != null)
+                addNode(val, root.left);
+            else {
+                root.left = addNode(val, root.left);
+                return root;
+            }
+        }
+
+        return root;
     }
 
 }
