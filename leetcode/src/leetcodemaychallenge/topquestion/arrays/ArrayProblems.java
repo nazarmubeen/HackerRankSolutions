@@ -505,5 +505,31 @@ public int[] topKFrequent(int[] nums, int k) {
         return maxlen;
     }
 
+    .
+            .......................
+            ]
+
+    public int lastStoneWeight(int[] stones) {
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+
+        for (int i = 0; i < stones.length; i++) {
+            pq.offer(stones[i]);
+        }
+
+        while (!pq.isEmpty() && pq.size() > 1) {
+
+            int x = pq.poll();
+            int y = pq.poll();
+
+            if (x != y) {
+                int rem = Math.abs(x - y);
+                pq.offer(rem);
+            }
+        }
+
+        return pq.size() == 1 ? pq.poll() : 0;
+
+    }
 
 }
