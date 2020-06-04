@@ -505,10 +505,6 @@ public int[] topKFrequent(int[] nums, int k) {
         return maxlen;
     }
 
-    .
-            .......................
-            ]
-
     public int lastStoneWeight(int[] stones) {
 
         PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
