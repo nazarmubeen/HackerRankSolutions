@@ -2,9 +2,7 @@ package leetcodemaychallenge.topquestion.strings;
 
 import Algo.Utils.ArrayUtilFunc;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class StringProblems {
 
@@ -219,5 +217,26 @@ return true;
         return answer;
     }
 
+    //
+    public boolean wordBreak(String s, List<String> wordDict) {
+        StringBuilder sb = new StringBuilder();
+
+        Set<String> hashset = new HashSet<String>();
+
+        for (String s : wordDict) {
+            hashset.add(s);
+        }
+
+
+        for (int i = 0; i < s.length(); i++) {
+            sb.append(s.charAt(i));
+
+            if (hashset.contains(sb.toString()) {
+                sb.setLength(0);
+            }
+        }
+
+
+    }
 
 }
