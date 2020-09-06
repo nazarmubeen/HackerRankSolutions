@@ -41,4 +41,37 @@ class Bipartite {
         }
         return true;
     }
+
+    public int kthSmallest(int[][] matrix, int k) {
+        matrixBool = new boolean[matrix.length][matrix[0].length];
+        dfs(0, 0, matrix);
+
+        while (k > 1) {
+            queue.poll();
+            k--;
+        }
+
+        return queue.peek();
+
+    }
+
+    //    //https://leetcode.com/submissions/detail/352297158/?from=/explore/interview/card/top-interview-questions-hard/120/sorting-and-searching/858/
+    void dfs(int row, int col, int[][] matrix) {
+
+        if (col < 0 || col >= matrix[0].length || row < 0 || row >= matrix.length || matrixBool[row][col] == true) {
+            return;
+        }
+
+        //    System.out.println(matrix[row][col]);
+
+
+        matrixBool[row][col] = true;
+        queue.add(matrix[row][col]);
+
+        dfs(row + 1, col, matrix);
+        dfs(row, col + 1, matrix);
+
+    }
+
+
 }
