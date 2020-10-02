@@ -12,6 +12,7 @@ public class Subtract {
 	public static void main(String[] args)
 	{
 		ListNode head=getList();
+
 		head=subtract(head);
 		printList(head);
 	}
