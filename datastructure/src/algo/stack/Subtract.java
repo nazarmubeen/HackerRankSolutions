@@ -1,6 +1,6 @@
 package algo.stack;
 
-import algo.linkedlist.ListNode;
+import algo.linkedlists.ListNode;
 
 import java.util.Stack;
 
