@@ -1,6 +1,6 @@
 package leetcode.dp;
 
-import Algo.Utils.ArrayUtilFunc;
+import algo.u.ArrayUtilFunc;
 
 import java.util.Stack;
 
