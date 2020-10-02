@@ -7,11 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="datastructure" />
+        <module name="codingportals" />
+        <module name="utils" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Algorithms" target="1.8" />
-      <module name="datastructure" target="1.8" />
+      <module name="Algorithms" target="8" />
+      <module name="codingportals" target="8" />
+      <module name="datastructure" target="8" />
+      <module name="utils" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

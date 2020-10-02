@@ -1,18 +1,18 @@
 package Algo.trees;
 
+import main.java.tree.TreeNode;
+
 public class Tree {
 
-	
-	Node root=null;
-	
-	
-	public Node constructRoot(int data)
-	{
-		
-		this.root=new Node(data);
-		return root;
-	}
-	
-	
-	
+
+    TreeNode root = null;
+
+
+    public TreeNode constructRoot(int data) {
+
+        this.root = new TreeNode(data);
+        return root;
+    }
+
+
 }

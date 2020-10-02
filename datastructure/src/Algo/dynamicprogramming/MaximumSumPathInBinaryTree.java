@@ -1,71 +1,68 @@
 package Algo.dynamicprogramming;
 
-import Algo.treeproblems_interviewBit.TreeNode;
 
-/// same value can be used by multiple recursive calls.
+import main.java.tree.TreeNode;
+
+/// same dataue can be used by multiple recursive calls.
 class Res {
-  int val;
+    int data;
 }
 
 public class MaximumSumPathInBinaryTree {
-	 static TreeNode root;
-	public static void main(String[] args)
-	{
-		MaximumSumPathInBinaryTree obj=new MaximumSumPathInBinaryTree();
-		TreeNode node=null;
-		obj.maxPathSum(node);
-	}
-	
+    static TreeNode root;
 
-	
-	
- 
+    public static void main(String[] args) {
+        MaximumSumPathInBinaryTree obj = new MaximumSumPathInBinaryTree();
+        TreeNode treeNode = null;
+        obj.maxPathSum(treeNode);
+    }
+
+
     // A utility function to find the maximum sum between any
-    // two leaves.This function calculates two values:
+    // two leaves.This function calculates two dataues:
     // 1) Maximum path sum between two leaves which is stored
     //    in res.
     // 2) The maximum root to leaf path sum which is returned.
     // If one side of root is empty, then it returns INT_MIN
-    int maxPathSumUtil(TreeNode node, Res res) {
- 
+    int maxPathSumUtil(TreeNode treeNode, Res res) {
+
         // Base cases
-        if (node == null)
+        if (treeNode == null)
             return 0;
-        if (node.left == null && node.right == null)
-            return node.val;
- 
+        if (treeNode.left == null && treeNode.right == null)
+            return treeNode.data;
+
         // Find maximum sum in left and right subtree. Also
         // find maximum root to leaf sums in left and right
         // subtrees and store them in ls and rs
-        int ls = maxPathSumUtil(node.left, res);
-        int rs = maxPathSumUtil(node.right, res);
- 
+        int ls = maxPathSumUtil(treeNode.left, res);
+        int rs = maxPathSumUtil(treeNode.right, res);
+
         // If both left and right children exist
-        if (node.left != null && node.right != null) {
- 
+        if (treeNode.left != null && treeNode.right != null) {
+
             // Update result if needed
-            res.val = Math.max(res.val, ls + rs + node.val);
- 
-            // Return maxium possible value for root being
+            res.data = Math.max(res.data, ls + rs + treeNode.data);
+
+            // Return maxium possible dataue for root being
             // on one side
-            return Math.max(ls, rs) + node.val;
+            return Math.max(ls, rs) + treeNode.data;
         }
- 
+
         // If any of the two children is empty, return
         // root sum for root being on one side
-        return (node.left == null) ? rs + node.val
-                : ls + node.val;
+        return (treeNode.left == null) ? rs + treeNode.data
+                : ls + treeNode.data;
     }
- 
+
     // The main function which returns sum of the maximum
     // sum path between two leaves. This function mainly
     // uses maxPathSumUtil()
-    int maxPathSum(TreeNode node)
-    {
+    int maxPathSum(TreeNode treeNode) {
         Res res = new Res();
-        res.val = Integer.MIN_VALUE;
+        res.data = Integer.MIN_VALUE;
         maxPathSumUtil(root, res);
-        return res.val;
+        return res.data;
     }
 	
 	

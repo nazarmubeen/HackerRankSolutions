@@ -204,7 +204,7 @@ Want your website featured here? [Contact me](https://deanattali.com/aboutme#con
 | [bigdata.juju.solutions](http://bigdata.juju.solutions) | Creating Big Data solutions Juju Solutions |
 | [joecks.github.io/clipboard-actions](http://joecks.github.io/clipboard-actions/) | Clipboard Actions - an Android app |
 | [deanattali.com/shinyjs](http://deanattali.com/shinyjs/) | shinyjs - an R package |
-| [blabel.github.io](http://blabel.github.io) | Library for canonicalising blank node labels in RDF graphs |
+| [blabel.github.io](http://blabel.github.io) | Library for canonicalising blank treeNode labels in RDF graphs |
 | [reactionic.github.io](http://reactionic.github.io) | Create iOS and Android apps with React and Ionic |
 | [ja2-stracciatella.github.io](http://ja2-stracciatella.github.io) | Jagged Alliance 2 Stracciatella |
 | [ddocent.com](http://ddocent.com/) | RADSeq Bioinformatics and Beyond |
