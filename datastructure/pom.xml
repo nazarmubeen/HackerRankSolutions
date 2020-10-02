@@ -40,9 +40,5 @@
     <artifactId>datastructure</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <properties>
-        <sonar.projectKey>nazarmubeen_ProgramminInJava_ds</sonar.projectKey>
-        <sonar.organization>nazarmubeen</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    </properties>
+
 </project>
