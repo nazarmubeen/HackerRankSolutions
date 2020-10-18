@@ -1,6 +1,6 @@
 package leetcode.leetcodemaychallenge.topquestion.arrays;
 
-import algo.u.ArrayUtilFunc;
+import main.java.u.ArrayUtilFunc;
 
 import java.util.Arrays;
 
