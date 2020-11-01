@@ -1,0 +1,47 @@
+Bitwise OR
+
+The | operator compares corresponding bits of two operands. If either of the bits is 1, it gives 1. If not, it gives 0.
+
+Bitwise AND
+
+The & operator compares corresponding bits of two operands. If both bits are 1, it gives 1.
+
+Bitwise Complement
+
+The ~ operator inverts the bit pattern. It makes every 0 to 1, and every 1 to 0.
+
+Bitwise XOR
+
+The ^ operator compares corresponding bits of two operands. If corresponding bits are different, it gives 1. If corresponding bits are same, it gives 0.
+
+Signed Left Shift
+
+The left shift operator << shifts a bit pattern to the left by certain number of specified bits, and zero bits are shifted into the low-order positions.
+212 (In binary: 11010100)
+
+212 << 1 evaluates to 424 (In binary: 110101000)
+212 << 0 evaluates to 212 (In binary: 11010100)
+212 << 4 evaluates to 3392 (In binary: 110101000000)
+
+Signed Right Shift
+The right shift operator >> shifts a bit pattern to the right by certain number of specified bits.
+
+212 (In binary: 11010100)
+
+212 >> 1 evaluates to 106 (In binary: 01101010)
+212 >> 0 evaluates to 212 (In binary: 11010100)
+212 >> 8 evaluates to 0 (In binary: 00000000)
+
+Unsigned Right Shift
+The unsigned right shift operator >>> shifts zero into the leftmost position.
+
+--------------------------------------------------------------------
+
+x & (x-1) will clear the lowest set bit of x
+x & ~(x-1) extracts the lowest set bit of x (all others are clear). Pretty patterns when applied to a linear sequence.
+x & (x + (1 << n)) = x, with the run of set bits (possibly length 0) starting at bit n cleared.
+x & ~(x + (1 << n)) = the run of set bits (possibly length 0) in x, starting at bit n.
+x | (x + 1) = x with the lowest cleared bit set.
+x | ~(x + 1) = extracts the lowest cleared bit of x (all others are set).
+x | (x - (1 << n)) = x, with the run of cleared bits (possibly length 0) starting at bit n set.
+x | ~(x - (1 << n)) = the lowest run of cleared bits (possibly length 0) in x, starting at bit n are the only clear bits.
