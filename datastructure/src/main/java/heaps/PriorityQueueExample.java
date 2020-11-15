@@ -3,7 +3,7 @@ package heaps;
 
 import java.util.PriorityQueue;
 
-public class JavaHeap {
+public class PriorityQueueExample {
 
     public static void main(String[] args) {
 
@@ -48,6 +48,5 @@ public class JavaHeap {
     private static PriorityQueue<Integer> getHeap() {
         return new PriorityQueue<>();
     }
-
 
 }

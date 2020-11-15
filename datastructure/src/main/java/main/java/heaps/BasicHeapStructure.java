@@ -20,14 +20,7 @@ public class BasicHeapStructure {
 	
 	void buildMaxHeap(int[] maxHeapArr)
 	{
-	
-		
-	
-		
 		print(maxHeapArr);
-		
-		
-		
 		int N=maxHeapArr.length;
 		System.out.println(" N = "+N);
 		
