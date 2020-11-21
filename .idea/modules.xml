@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Algorithms.iml" filepath="$PROJECT_DIR$/Algorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProgramminInJava.iml" filepath="$PROJECT_DIR$/ProgramminInJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics.iml" filepath="$PROJECT_DIR$/basics.iml" />
       <module fileurl="file://$PROJECT_DIR$/codingportals/codingportals.iml" filepath="$PROJECT_DIR$/codingportals/codingportals.iml" />
       <module fileurl="file://$PROJECT_DIR$/datastructure/datastructure.iml" filepath="$PROJECT_DIR$/datastructure/datastructure.iml" />
       <module fileurl="file://$PROJECT_DIR$/systemdesign/systemdesign.iml" filepath="$PROJECT_DIR$/systemdesign/systemdesign.iml" />
