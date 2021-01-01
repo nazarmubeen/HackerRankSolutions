@@ -1,43 +1,44 @@
-package grokkingpatterns.dp.knapsack;
-
+/*
 class Knapsack {
 
     public int solveKnapsack(int[] profits, int[] weights, int capacity) {
-        // basic checks
-        if (capacity <= 0 || profits.length == 0 || weights.length != profits.length)
-            return 0;
+        return this.knapsackRecursive(profits, weights, capacity);
+    }
 
-        int n = profits.length;
+    private int knapsackRecursive(int[] profits, int[] weights, int capacity) {
+                int maxProfit=-1;
 
-        //capacity +1
-        int[][] dp = new int[n][capacity + 1];
+                int[][] dp=new int[][];
 
-        // populate the capacity=0 columns, with '0' capacity we have '0' profit
-        for (int i = 0; i < n; i++)
-            dp[i][0] = 0;
+            for(int i=0;i<weights.length;i++){
 
-        // if we have only one weight, we will take it if it is not more than the capacity
-        for (int c = 0; c <= capacity; c++) {
-            if (weights[0] <= c)
-                dp[0][c] = profits[0];
-        }
+                int currentProfit=profits[i];
+                int currentCapacity=weights[i];
 
-        // process all sub-arrays for all the capacities
-        for (int i = 1; i < n; i++) {
-            for (int c = 1; c <= capacity; c++) {
-                int profit1 = 0, profit2 = 0;
-                // include the item, if it is not more than the capacity
-                if (weights[i] <= c)
-                    profit1 = profits[i] + dp[i - 1][c - weights[i]];
-                // exclude the item
-                profit2 = dp[i - 1][c];
-                // take maximum
-                dp[i][c] = Math.max(profit1, profit2);
+                int currentIndex=i+1;
+                while(currentIndex<weights.length) {
+
+                    for (int j = currentIndex; j < weights.length; j++) {
+                        System.out.println(" i " + i + "j " + j);
+                        System.out.println("currentCapacity+weights[j] " + (currentCapacity + weights[j]));
+                        if (currentCapacity + weights[j] <= capacity) {
+                            currentCapacity += weights[j];
+                            currentProfit += profits[j];
+                            System.out.println("currentProfit " + currentProfit);
+                            maxProfit = Math.max(maxProfit, currentProfit);
+                        }
+
+                    }
+
+                    currentIndex++;
+                    currentProfit=profits[i];
+                    currentCapacity=weights[i];
+                }
+
             }
-        }
 
-        // maximum profit will be at the bottom-right corner.
-        return dp[n - 1][capacity];
+            return maxProfit;
+
     }
 
     public static void main(String[] args) {
@@ -46,7 +47,8 @@ class Knapsack {
         int[] weights = {1, 2, 3, 5};
         int maxProfit = ks.solveKnapsack(profits, weights, 7);
         System.out.println("Total knapsack profit ---> " + maxProfit);
-        maxProfit = ks.solveKnapsack(profits, weights, 6);
-        System.out.println("Total knapsack profit ---> " + maxProfit);
+      //  maxProfit = ks.solveKnapsack(profits, weights, 6);
+     //   System.out.println("Total knapsack profit ---> " + maxProfit);
     }
 }
+*/
