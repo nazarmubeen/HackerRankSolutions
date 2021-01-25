@@ -1,44 +1,33 @@
-/*
 class Knapsack {
 
     public int solveKnapsack(int[] profits, int[] weights, int capacity) {
-        return this.knapsackRecursive(profits, weights, capacity);
+        Integer[][] dp = new Integer[profits.length][capacity + 1];
+        return this.knapsackRecursive(dp, profits, weights, capacity, 0);
     }
 
-    private int knapsackRecursive(int[] profits, int[] weights, int capacity) {
-                int maxProfit=-1;
+    private int knapsackRecursive(Integer[][] dp, int[] profits, int[] weights, int capacity,
+                                  int currentIndex) {
 
-                int[][] dp=new int[][];
+        // base checks
+        if (capacity <= 0 || currentIndex >= profits.length)
+            return 0;
 
-            for(int i=0;i<weights.length;i++){
+        // if we have already solved a similar problem, return the result from memory
+        if (dp[currentIndex][capacity] != null)
+            return dp[currentIndex][capacity];
 
-                int currentProfit=profits[i];
-                int currentCapacity=weights[i];
+        // recursive call after choosing the element at the currentIndex
+        // if the weight of the element at currentIndex exceeds the capacity, we shouldn't process this
+        int profit1 = 0;
+        if (weights[currentIndex] <= capacity)
+            profit1 = profits[currentIndex] + knapsackRecursive(dp, profits, weights,
+                    capacity - weights[currentIndex], currentIndex + 1);
 
-                int currentIndex=i+1;
-                while(currentIndex<weights.length) {
+        // recursive call after excluding the element at the currentIndex
+        int profit2 = knapsackRecursive(dp, profits, weights, capacity, currentIndex + 1);
 
-                    for (int j = currentIndex; j < weights.length; j++) {
-                        System.out.println(" i " + i + "j " + j);
-                        System.out.println("currentCapacity+weights[j] " + (currentCapacity + weights[j]));
-                        if (currentCapacity + weights[j] <= capacity) {
-                            currentCapacity += weights[j];
-                            currentProfit += profits[j];
-                            System.out.println("currentProfit " + currentProfit);
-                            maxProfit = Math.max(maxProfit, currentProfit);
-                        }
-
-                    }
-
-                    currentIndex++;
-                    currentProfit=profits[i];
-                    currentCapacity=weights[i];
-                }
-
-            }
-
-            return maxProfit;
-
+        dp[currentIndex][capacity] = Math.max(profit1, profit2);
+        return dp[currentIndex][capacity];
     }
 
     public static void main(String[] args) {
@@ -47,8 +36,7 @@ class Knapsack {
         int[] weights = {1, 2, 3, 5};
         int maxProfit = ks.solveKnapsack(profits, weights, 7);
         System.out.println("Total knapsack profit ---> " + maxProfit);
-      //  maxProfit = ks.solveKnapsack(profits, weights, 6);
-     //   System.out.println("Total knapsack profit ---> " + maxProfit);
+        maxProfit = ks.solveKnapsack(profits, weights, 6);
+        System.out.println("Total knapsack profit ---> " + maxProfit);
     }
 }
-*/
