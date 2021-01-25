@@ -8,6 +8,7 @@
       <module>datastructure</module>
       <module>codingportals</module>
       <module>utils</module>
+        <module>javaconcepts</module>
     </modules>
     <name>DataStructuresInJava</name>
   <description>Data Structure Implementation In Java</description>

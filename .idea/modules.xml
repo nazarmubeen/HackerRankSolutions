@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Algorithms.iml" filepath="$PROJECT_DIR$/Algorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/codingportals/codingportals.iml" filepath="$PROJECT_DIR$/codingportals/codingportals.iml" />
       <module fileurl="file://$PROJECT_DIR$/datastructure/datastructure.iml" filepath="$PROJECT_DIR$/datastructure/datastructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaconcepts/javaconcepts.iml" filepath="$PROJECT_DIR$/javaconcepts/javaconcepts.iml" />
       <module fileurl="file://$PROJECT_DIR$/utils/utils.iml" filepath="$PROJECT_DIR$/utils/utils.iml" />
     </modules>
   </component>
